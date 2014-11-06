@@ -38,6 +38,15 @@ class UsersController < ApplicationController
     end
   end
   
+  def destroy
+    @user = User.find(params[:id])
+    if @user.delete
+      redirect_to @user, notice: 'Deleted user'
+    else
+      redirect_to request.referrer, notice: 'Could not destroy user'
+    end
+  end
+  
   private
     def user_params
       params.require(:user).permit(:name, :email, :role, :password, :password_confirmation)
