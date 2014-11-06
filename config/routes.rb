@@ -6,6 +6,9 @@ get 'signup' => 'users#new'
 get 'static_pages/about'
 get 'static_pages/home'
 get 'static_pages/contact'
+get 'sign_in' => 'sessions#new'
+post 'sign_in' => 'sessions#create'
+delete 'sign_out' => 'sessions#destroy'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -20,6 +20,17 @@
         <li role="presentation" <%= current_page?(controller: 'static_pages', action: 'contact') ? "class=active" :""%>><%= link_to 'Contact Us', static_pages_contact_path %></li>
         <li role="presentation" <%= current_page?(controller: 'users', action: 'index' ) ? "class=active" :""%>><%= link_to 'Users List', users_path %></li>
         <li role="presentation" <%= current_page?(controller: 'users', action: 'new' ) ? "class=active" :""%>><%= link_to 'Sign Up', new_user_path %></li>
+        
+        
+        <li><%=
+          if current_user_logged_in?
+            the_link = link_to 'Sign Out', sign_out_path, method: :delete
+          else
+            the_link = link_to 'Sign In', sign_in_path
+            
+          end
+         %></li>
+        
       </ul>
     
      

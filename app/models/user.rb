@@ -5,4 +5,6 @@ class User < ActiveRecord::Base
     validates :password, presence: true, length: { minimum: 6 }
     validates :password_confirmation, presence: true, length: { minimum: 6 }
     # validates :email, format: { with: /\A\S+@\S+\.\S+\z/, message: 'must be a valid email address'}
+    
+    has_secure_password
 end
