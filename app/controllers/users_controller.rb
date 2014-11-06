@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   end
 
   def new
+    @user = User.new
   end
   
   def create
@@ -30,8 +31,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     
     if @user.update(user_params)
-      redirect_to @user
+      redirect_to @user, notice: 'Successfully updated user!'
     else
+      flash[:notice] = "Couldn't update user!"
       render 'edit'
     end
   end
