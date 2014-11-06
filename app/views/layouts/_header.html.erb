@@ -15,10 +15,11 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to 'About Us', static_pages_about_path %></li>
-        <li><%= link_to 'Contact Us', static_pages_contact_path %></li>
-        <li><%= link_to 'Users List', users_path %></li>
-        <li><%= link_to 'Sign Up', new_user_path %></li>
+       <li role="presentation" <%= current_page?(root_path) ? "class=active" :""%>><%= link_to 'Home', root_path %></li>
+        <li role="presentation" <%= current_page?(controller: 'static_pages', action: 'about' ) ? "class=active" :""%>><%= link_to 'About Us', static_pages_about_path %></li>
+        <li role="presentation" <%= current_page?(controller: 'static_pages', action: 'contact') ? "class=active" :""%>><%= link_to 'Contact Us', static_pages_contact_path %></li>
+        <li role="presentation" <%= current_page?(controller: 'users', action: 'index' ) ? "class=active" :""%>><%= link_to 'Users List', users_path %></li>
+        <li role="presentation" <%= current_page?(controller: 'users', action: 'new' ) ? "class=active" :""%>><%= link_to 'Sign Up', new_user_path %></li>
       </ul>
     
      
