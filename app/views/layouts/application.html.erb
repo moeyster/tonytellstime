@@ -9,12 +9,11 @@
 <body>
 
 <%= render 'layouts/header' %>
-
 <div id="notice"><%= flash[:notice] %></div>
 <div id="error"><%= flash[:error] %></div>
 <div id="alert"><%= flash[:alert] %></div>
-
+<div class="container">
 <%= yield %>
-
+</div>
 </body>
 </html>
