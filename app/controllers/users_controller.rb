@@ -11,9 +11,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     
     if @user.save
-      redirect_to @user
+      redirect_to @user, notice: 'Successfully created a user'
     else
-      # flash[:alert] = "user not created, please try again"
+      flash[:alert] = "User not created, please try again"
       render 'new'
     end
   end
