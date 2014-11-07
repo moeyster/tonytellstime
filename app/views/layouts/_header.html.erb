@@ -19,7 +19,7 @@
         <li role="presentation" <%= current_page?(controller: 'static_pages', action: 'about' ) ? "class=active" :""%>><%= link_to 'About Us', static_pages_about_path %></li>
         <li role="presentation" <%= current_page?(controller: 'static_pages', action: 'contact') ? "class=active" :""%>><%= link_to 'Contact Us', static_pages_contact_path %></li>
         <li role="presentation" <%= current_page?(controller: 'users', action: 'index' ) ? "class=active" :""%>><%= link_to 'Users List', users_path %></li>
-        <li role="presentation" <%= current_page?(controller: 'users', action: 'new' ) ? "class=active" :""%>><%= link_to 'Sign Up', new_user_path %></li>
+        <li role="presentation" <%= current_page?(controller: 'users', action: 'new' ) ? "class=active" :""%>><%= link_to 'Register', new_user_path %></li>
         
         
         <li><%=

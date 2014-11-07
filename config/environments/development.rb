@@ -21,9 +21,22 @@ Workspace::Application.configure do
 
   # Raise an error on page load if there are pending migrations
   config.active_record.migration_error = :page_load
+  
+  
+  
 
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
-end
+  config.action_mailer.default_url_options = { host:'https://tonytellstime-c9-moeyster.c9.io'}
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+  :user_name => ENV['MAILTRAPUSERNAME'],
+  :password => ENV['MAILTRAPPASSWORD'],
+  :address => 'mailtrap.io',
+  :domain => 'mailtrap.io',
+  :port => '2525',
+  :authentication => :cram_md5
+}
+  end

@@ -33,4 +33,5 @@ Workspace::Application.configure do
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
+  config.action_mailer.default_url_options = { host:'https://tonytellstime-c9-moeyster.c9.io'}
 end

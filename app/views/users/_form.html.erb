@@ -24,6 +24,14 @@
    <%= f.label :password_confirmation %>
     <%= f.text_field :password_confirmation, class: 'form-control' %>
   </div>
-  <button type="submit" class="btn btn-default">Submit</button>
+  
+  <% if @user.new_record? %>
+    <% submit_label = "Sign Up" %>
+  <% else %>
+    <% submit_label = "Update" %>
+  <% end %>
+  
+  <%= f.submit submit_label, class: 'btn btn-success'%>
+  <!--<button type="submit" class="btn btn-default">Submit</button>-->
 
 <% end %>

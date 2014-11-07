@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     
     if @user.save
+      UserMailer.welcome_email(@user).deliver #to send email
       redirect_to @user, notice: 'Successfully created a user'
     else
       flash[:alert] = "User not created, please try again"
