@@ -2,6 +2,7 @@ Workspace::Application.routes.draw do
   
 resources :users
 
+
 get 'signup' => 'users#new'
 get 'static_pages/about'
 get 'static_pages/home'
